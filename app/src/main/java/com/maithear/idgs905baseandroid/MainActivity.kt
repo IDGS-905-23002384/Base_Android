@@ -10,6 +10,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.maithear.idgs905baseandroid.CalcularDistancia.CalcularDistancia
 import com.maithear.idgs905baseandroid.Ejemplo1.ejemplo1
 import com.maithear.idgs905baseandroid.Ejemplo2.Ejemplo2Activity
+import com.maithear.idgs905baseandroid.ExamenResistencia.ExamenResistencia
 import com.maithear.idgs905baseandroid.MultiplicarAporB.MultiplicarAPorB
 
 class MainActivity : AppCompatActivity() {
@@ -22,6 +23,7 @@ class MainActivity : AppCompatActivity() {
         val btnCalcularDistancia = findViewById<Button>(R.id.btn2)
         val btnEjemplo2 = findViewById<Button>(R.id.btn3)
         val btnMultiplicar = findViewById<Button>(R.id.btn4)
+        val btnResistencia = findViewById<Button>(R.id.btn5)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -33,6 +35,7 @@ class MainActivity : AppCompatActivity() {
         btnCalcularDistancia.setOnClickListener { navigateToCalcularDistancia() }
         btnEjemplo2.setOnClickListener { navigateToEjemplo2() }
         btnMultiplicar.setOnClickListener { navigateToMultiplicar() }
+        btnResistencia.setOnClickListener { navigateToResistencia() }
     }
 
     fun navegateToEjemplo1(){
@@ -52,6 +55,11 @@ class MainActivity : AppCompatActivity() {
 
     fun navigateToMultiplicar(){
         val intent = Intent(this, MultiplicarAPorB::class.java)
+        startActivity(intent)
+    }
+
+    fun navigateToResistencia(){
+        val intent = Intent(this, ExamenResistencia::class.java )
         startActivity(intent)
     }
 }
